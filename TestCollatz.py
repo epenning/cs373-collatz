@@ -53,9 +53,9 @@ class TestCollatz (TestCase) :
         self.assertEqual(v, 174)
     
     # Test over total range
-    #def test_eval_5 (self) :
-    #    v = collatz_eval(1, 999999)
-    #    self.assertEqual(v, 525)
+    def test_eval_5 (self) :
+        v = collatz_eval(1, 999999)
+        self.assertEqual(v, 525)
 
     # ----
     # cycle_length

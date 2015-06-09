@@ -47,6 +47,7 @@ def cycle_length (n) :
     """
     n the number for which to find the cycle length
     """
+    assert n > 0
     count = 1
     while n > 1 :
         if n % 2 == 1 :
@@ -54,8 +55,9 @@ def cycle_length (n) :
             n = 3*n + 1
         else :
             # n is even
-            n = n/2
-        count = count + 1
+            n = n//2
+        count += 1
+    assert count > 0
     return count
 
 # -------------
