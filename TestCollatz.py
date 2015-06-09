@@ -56,6 +56,11 @@ class TestCollatz (TestCase) :
     def test_eval_5 (self) :
         v = collatz_eval(1, 999999)
         self.assertEqual(v, 525)
+        
+    # Test input with i > j
+    def test_eval_6 (self) :
+        v = collatz_eval(10, 1)
+        self.assertEqual(v, 20)
 
     # ----
     # cycle_length
