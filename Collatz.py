@@ -41,7 +41,6 @@ def cycle_length (n) :
     """
     n the number for which to find the cycle length
     """
-    """
     count = 1
     while n != 1 :
         if n % 2 == 1 :
@@ -50,9 +49,8 @@ def cycle_length (n) :
         else :
             # n is even
             n = n/2
+        count = count + 1
     return count
-    """
-    return 1
 
 # -------------
 # collatz_print
