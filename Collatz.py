@@ -33,6 +33,27 @@ def collatz_eval (i, j) :
     # <your code>
     return 1
 
+# ------------
+# cycle_length
+# ------------
+
+def cycle_length (n) :
+    """
+    n the number for which to find the cycle length
+    """
+    """
+    count = 1
+    while n != 1 :
+        if n % 2 == 1 :
+            # n is odd
+            n = 3*n + 1
+        else :
+            # n is even
+            n = n/2
+    return count
+    """
+    return 1
+
 # -------------
 # collatz_print
 # -------------
