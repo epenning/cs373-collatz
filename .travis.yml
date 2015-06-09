@@ -36,3 +36,6 @@ script:
     - make test
     - ls -al
     - make check
+
+notifications:
+    email: false
