@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3 
 
 # ---------------------------
 # projects/collatz/Collatz.py
@@ -12,6 +12,7 @@
 
 def collatz_read (s) :
     """
+    test
     read two ints
     s a string
     return a list of two ints, representing the beginning and end of a range, [i, j]
