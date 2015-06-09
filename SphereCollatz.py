@@ -6,6 +6,8 @@
 # Glenn P. Downing
 # ---------------------------
 
+import sys
+
 # ------------
 # collatz_read
 # ------------
@@ -32,8 +34,9 @@ def collatz_eval (i, j) :
     """
     maximum = 1
     for n in range(i, j+1):
-        if cycle_length(n)>maximum:
-            maximum = cycle_length(n)
+        cycle = cycle_length(n)
+        if cycle > maximum:
+            maximum = cycle
     return maximum
 
 # ------------

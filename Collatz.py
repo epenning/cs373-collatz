@@ -12,6 +12,7 @@
 
 def collatz_read (s) :
     """
+    test
     read two ints
     s a string
     return a list of two ints, representing the beginning and end of a range, [i, j]
@@ -31,8 +32,9 @@ def collatz_eval (i, j) :
     """
     maximum = 1
     for n in range(i, j+1):
-        if cycle_length(n)>maximum:
-            maximum = cycle_length(n)
+        cycle = cycle_length(n)
+        if cycle > maximum:
+            maximum = cycle
     return maximum
 
 # ------------
@@ -43,6 +45,7 @@ def cycle_length (n) :
     """
     n the number for which to find the cycle length
     """
+    assert n > 0
     count = 1
     while n > 1 :
         if n % 2 == 1 :
@@ -50,8 +53,9 @@ def cycle_length (n) :
             n = 3*n + 1
         else :
             # n is even
-            n = n/2
-        count = count + 1
+            n = n//2
+        count += 1
+    assert count > 0
     return count
 
 # -------------
@@ -81,3 +85,4 @@ def collatz_solve (r, w) :
         i, j = collatz_read(s)
         v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+        

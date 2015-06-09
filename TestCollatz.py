@@ -51,6 +51,11 @@ class TestCollatz (TestCase) :
     def test_eval_4 (self) :
         v = collatz_eval(900, 1000)
         self.assertEqual(v, 174)
+    
+    # Test over total range
+    #def test_eval_5 (self) :
+    #    v = collatz_eval(1, 999999)
+    #    self.assertEqual(v, 525)
 
     # ----
     # cycle_length
@@ -63,12 +68,16 @@ class TestCollatz (TestCase) :
     def test_cycle_length_2 (self) :
         v = cycle_length(5)
         self.assertEqual(v, 6)
-
+        
     def test_cycle_length_3 (self) :
+        v = cycle_length(10)
+        self.assertEqual(v, 7)
+
+    def test_cycle_length_4 (self) :
         v = cycle_length(524288)
         self.assertEqual(v, 20)
 
-    def test_cycle_length_4 (self) :
+    def test_cycle_length_5 (self) :
         v = cycle_length(27)
         self.assertEqual(v, 112)
 
@@ -85,11 +94,18 @@ class TestCollatz (TestCase) :
     # solve
     # -----
 
-    def test_solve (self) :
+    def test_solve_1 (self) :
         r = StringIO("1 10\n100 200\n201 210\n900 1000\n")
         w = StringIO()
         collatz_solve(r, w)
         self.assertEqual(w.getvalue(), "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
+        
+    # Test over total range
+    #def test_solve_2 (self) :
+    #    r = StringIO("1 999999\n")
+    #    w = StringIO()
+    #    collatz_solve(r, w)
+    #    self.assertEqual(w.getvalue(), "1 999999 525\n")
 
 # ----
 # main
