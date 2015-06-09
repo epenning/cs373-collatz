@@ -16,7 +16,7 @@ install:
     - sudo apt-get install python-numpy
 
 before_script:
-	- chmod a+x Collatz.py RunCollatz.py TestCollatz.py
+    - chmod a+x Collatz.py RunCollatz.py TestCollatz.py
     - uname -a
     - printenv
     - pip3 --version
