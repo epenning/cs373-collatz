@@ -26,6 +26,7 @@ before_script:
     - python3 -c "import numpy; print(numpy.__version__)"
 
 script:
+    - make clean
     - date
     - ls -al
     - touch Collatz.log
