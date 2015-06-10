@@ -70,5 +70,5 @@ RunCollatz.in: CreateCollatzIn.py
 	cat RunCollatz.in
 	
 RunCollatzExpected.out: CreateCollatzOut.py
-	./CreateCollatzOut.py > RunCollatzExpected.out
+	./CreateCollatzOut.py < RunCollatz.in > RunCollatzExpected.out
 	cat RunCollatzExpected.out

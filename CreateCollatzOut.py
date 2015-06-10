@@ -1,31 +1,47 @@
 #!/usr/bin/env python3 
 
+# ------------------------------
+# projects/collatz/RunCollatz.py
+# Copyright (C) 2015
+# Glenn P. Downing
+# ------------------------------
+
 # -------
 # imports
 # -------
 
 import sys
 
-from Collatz import cycle_length, collatz_print
+from CollatzSimple import collatz_solve
 
-# ------------
-# write_sample
-# ------------
-
-def write_sample_out (w) :
-    """
-    prints original 4 inputs to win and solutions to wout
-    w a writer to expected output file
-    """
-    
-    collatz_print(w, 1, 10, 20)
-    collatz_print(w, 100, 200, 125)
-    collatz_print(w, 201, 210, 89)
-    collatz_print(w, 900, 1000, 174)
-
-# ------------
+# ----
 # main
-# ------------
+# ----
 
-if __name__ == '__main__':
-    write_sample_out (sys.stdin, sys.stdout)
+if __name__ == "__main__" :
+    collatz_solve(sys.stdin, sys.stdout)
+
+"""
+% cat RunCollatz.in
+1 10
+100 200
+201 210
+900 1000
+
+
+
+% RunCollatz.py < RunCollatz.in > RunCollatz.out
+
+
+
+% cat RunCollatz.out
+1 10 1
+100 200 1
+201 210 1
+900 1000 1
+
+
+
+% pydoc3 -w Collatz
+# That creates the file Collatz.html
+"""
