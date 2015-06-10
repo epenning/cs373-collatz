@@ -34,6 +34,7 @@ script:
     - make Collatz.html
     - ls -al
     - make test
+    - diff RunCollatz.out RunCollatzExpected.out
     - ls -al
     - make check
 
