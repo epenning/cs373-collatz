@@ -28,4 +28,4 @@ def write_sample_out (w) :
 # ------------
 
 if __name__ == '__main__':
-    write_sample_out (sys.stdout)
+    write_sample_out (sys.stdin, sys.stdout)
