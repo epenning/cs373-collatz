@@ -11,7 +11,10 @@ FILES :=                              \
     RunCollatz.in                     \
     RunCollatz.out                    \
     TestCollatz.py                    \
-    TestCollatz.out
+    TestCollatz.out					  \
+    CreateCollatzIn.py				  \
+    CreateCollatzOut.py				  \
+    RunCollatzExpected.out			  
 
 all:
 
@@ -32,6 +35,14 @@ clean:
 
 config:
 	git config -l
+
+cleaninout:
+	rm -f  RunCollatz.in
+	rm -f  RunCollatzExpected.out
+
+inout: RunCollatz.in RunCollatzExpected.out
+
+run: RunCollatz.out
 
 test: RunCollatz.out TestCollatz.out
 
@@ -54,3 +65,10 @@ TestCollatz.out: TestCollatz.py
 	coverage3 report -m                      >> TestCollatz.out
 	cat TestCollatz.out
 
+RunCollatz.in: CreateCollatzIn.py
+	./CreateCollatzIn.py > RunCollatz.in
+	cat RunCollatz.in
+	
+RunCollatzExpected.out: CreateCollatzOut.py
+	./CreateCollatzOut.py > RunCollatzExpected.out
+	cat RunCollatzExpected.out
