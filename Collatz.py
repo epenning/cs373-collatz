@@ -85,6 +85,5 @@ def collatz_solve (r, w) :
     for s in r :
         i, j = collatz_read(s)
         v = collatz_eval(i, j) if  ( i < j )  else collatz_eval(j, i)
-        v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
         
