@@ -31,16 +31,10 @@ def collatz_eval (i, j) :
     """
     assert i > 0 and j > 0
     maximum = 1
-    if i <= j :
-        for n in range(i, j+1) :
-            cycle = cycle_length(n)
-            if cycle > maximum:
-                maximum = cycle
-    else :
-        for n in range(j, i+1) :
-            cycle = cycle_length(n)
-            if cycle > maximum:
-                maximum = cycle
+    for n in range(i, j+1) :
+        cycle = cycle_length(n)
+        if cycle > maximum:
+            maximum = cycle
     assert maximum > 0
     return maximum
 
@@ -90,6 +84,7 @@ def collatz_solve (r, w) :
     """
     for s in r :
         i, j = collatz_read(s)
+        v = collatz_eval(i, j) if  ( i < j )  else collatz_eval(j, i)
         v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
         
