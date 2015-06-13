@@ -56,13 +56,14 @@ def cycle_length (n) :
     if cycle_lengths[n] != None :
         return cycle_lengths[n]
     count = 1
-    while n > 1 :
-        if n % 2 == 1 :
-            # n is odd
-            n = 3*n + 1
+    m = n
+    while m > 1 :
+        if m % 2 == 1 :
+            # m is odd
+            m = 3*m + 1
         else :
-            # n is even
-            n = n//2
+            # m is even
+            m = m//2
         count += 1
     assert count > 0
     cycle_lengths[n] = count
