@@ -51,6 +51,7 @@ def cycle_length (n) :
     return the cycle length of n
     """
     assert n > 0
+    # check if cycle length of n is already known in cache
     if cycle_lengths[n] != None :
         return cycle_lengths[n]
     count = 1
@@ -64,6 +65,7 @@ def cycle_length (n) :
             m = m//2
         count += 1
     assert count > 0
+    # save cycle length of n in cache
     cycle_lengths[n] = count
     return count
 
@@ -92,6 +94,7 @@ def collatz_solve (r, w) :
     """
     for s in r :
         i, j = collatz_read(s)
+        # pass to collatz_eval so first number < second to avoid duplicate code
         v = collatz_eval(i, j) if  ( i < j )  else collatz_eval(j, i)
         collatz_print(w, i, j, v)
         
