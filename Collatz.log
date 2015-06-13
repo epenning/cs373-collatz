@@ -1,0 +1,217 @@
+commit a17d9800f228100d6e2f58e5bcae33b451547def
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sat Jun 13 12:25:00 2015 -0500
+
+    added several explanatory comments
+
+commit 6e816cd4cd0561e8a950e999a35f76dddb75c2c9
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sat Jun 13 12:20:17 2015 -0500
+
+    edited SphereCollatz to include the cache bugfix, passes sphere test
+
+commit 743b3688bd5269742b1015d7a4d32a67deba0f09
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sat Jun 13 12:15:49 2015 -0500
+
+    fixed bug in cycle_length cache updating where the length was placed
+    into the wrong index
+
+commit aa799d4bc953cf52066ce14576d859aadaa9f8b7
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sat Jun 13 12:07:05 2015 -0500
+
+    added the simplest possible cache to Collatz and updated SphereCollatz
+    accordingly
+
+commit 4e151b955accae971fe97b30aaf11e099c8dc74b
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sat Jun 13 11:25:07 2015 -0500
+
+    added simple tests for read, print, solve
+
+commit 70f4ee03ce565fd350b9ffe5698e8d19ce456814
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Wed Jun 10 22:31:14 2015 -0500
+
+    made clean so travis ci will run tests
+
+commit f2e67bf8f1581ff9f6da9a396aec77110fc2acfb
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Wed Jun 10 22:22:47 2015 -0500
+
+    fixed an error with collatz_solve repeating incorrect input to
+    collatz_eval
+
+commit a1c47a52e504f088f01ac719a59b041ad89560c1
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Wed Jun 10 22:21:49 2015 -0500
+
+    moved logic for first input > second input from collatz_eval to
+    collatz_solve and moved test accordingly
+
+commit bae6a095557958a2671e1b791d95e6d0ef78c291
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Wed Jun 10 20:45:24 2015 -0500
+
+    added sudo: required to .travis.yml for Travis CI
+
+commit 48f615bb820ae616d02c0057ba8b5ff6e6bc2fcf
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Wed Jun 10 00:39:22 2015 -0500
+
+    repo is now private, edited readme
+
+commit dbcef803988f10425c382894d1459fab1ac6ad49
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Wed Jun 10 00:12:54 2015 -0500
+
+    generated random input for RunCollatz and edited .travis.yml so it
+    performs a diff of the expected to actual output
+
+commit b8d1e76238e991639b25abaa6721f357976cb9c5
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 23:22:54 2015 -0500
+
+    put simple solution of collatz in a different file to be used for
+    confirmed solutions for expected run output
+
+commit 1d7612d21949d110609e0a2761cb1c86984b50e4
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 23:11:38 2015 -0500
+
+    created program to pre-generate all cycle length outputs
+
+commit ab5b6afc2711ab476631cd81b2631a58d65283a3
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 22:50:38 2015 -0500
+
+    added makefile commands for CreateCollatzIn and Out
+
+commit 47c0f2d77acabe8458d78f8843008d203e3dc017
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 22:42:12 2015 -0500
+
+    created programs to automatically generate sample input and expected
+    output of solve
+
+commit 073e36e2eba7b735c067fc0906b8bfb0639141f3
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 14:01:10 2015 -0500
+
+    creating file to automatically write input test cases
+
+commit 8478d5e777fc135b82405e591db5818db7fb1e9f
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 13:33:06 2015 -0500
+
+    added test for i > j in eval, and passed Sphere test
+
+commit 971bfb20829a6a3909b281496499b7b979420c3c
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 13:33:06 2015 -0500
+
+    added test for i > j in eval, and passed Sphere test
+
+commit a66b609f6d215e371af973fc1e5147ac6723c6e8
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 13:21:35 2015 -0500
+
+    edited collatz_eval to allow j < i for input, and assert input/output is
+    valid
+
+commit 182b360af934c9e03e85062ba6d8877f4cc5f6ba
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 13:10:24 2015 -0500
+
+    added asserts to cycle_length, local cycle variable in collatz_eval
+
+commit 8d69aa2d69be7502ff02c9e9663d92249cfca7c4
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 12:19:16 2015 -0500
+
+    turned off email notifications from Travis CI
+
+commit 4ea4b035d9cbaa4bf9f687267efec822db363ab6
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 01:33:04 2015 -0500
+
+    combined Collatz and RunCollatz into SphereCollatz
+
+commit c095d92a6e599b0de3e9442616a2a3ac135a1509
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 01:22:19 2015 -0500
+
+    test solve has also been fixed now, had been overlooked
+
+commit 09b89dbe158016afed90931ebe891f87ad84f74a
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 01:01:22 2015 -0500
+
+    cycle length and its unit tests have been implemented
+
+commit 0fb431dad1da9ef74d5a5660b75c211bcd3e9058
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 00:25:32 2015 -0500
+
+    removed the make clean from .travis.yml
+
+commit d5403fb7d87d3f93c4338fa1de0111c88f88f97b
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 9 00:20:57 2015 -0500
+
+    made clean the dev branch
+
+commit c76a8c5ff3aa03a412e9a2d664e33f21408ce0b5
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 23:45:41 2015 -0500
+
+    changed travis.yml with make clean before the build
+
+commit 013b6f66f4044eef9dc306338810e0e9a0ee9f72
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 23:41:49 2015 -0500
+
+    created function for cycle length and wrote 3 tests for it
+
+commit bb8ce005dff0cba2f7b7ed45e5b79649b529fd0a
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 23:23:16 2015 -0500
+
+    fixed unit tests, fix #12
+
+commit 6736723fb84ec003016c843653a813e7fcdf5afd
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 21:50:20 2015 -0500
+
+    again changing access so that Travis CI won't be restricted
+
+commit 5fa96c75fa04550041990db11063c6e0674eaeee
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 21:49:26 2015 -0500
+
+    again changing access so that Travis CI won't be restricted
+
+commit 1c44d190c1f92322dbb89c7310c939f2db1b9089
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 21:36:38 2015 -0500
+
+    again changing access so that Travis CI won't be restricted
+
+commit 7cff5139246d83b004efa680e5cbcdfcc1ece73f
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 21:26:34 2015 -0500
+
+    changed access so that Travis CI won't be restricted
+
+commit d971a1d90ad3281c66b29f0e2f9a0a0c659bcfc3
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Mon Jun 8 19:08:20 2015 -0500
+
+    copied code files from public class repo, fix #7, fix #8, fix #9
+
+commit 5f436dab6cc3b3a45c3af1ff0f0abbbd157753ba
+Author: pieiscool <hashi10@gmail.com>
+Date:   Sun Jun 7 21:36:48 2015 -0500
+
+    Initial commit
