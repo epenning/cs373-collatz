@@ -8,13 +8,15 @@
 
 import sys
 
+# list cache of calculated cycle lengths for each number 1 to 1000000
+cycle_lengths = [None] * 1000000
+
 # ------------
 # collatz_read
 # ------------
 
 def collatz_read (s) :
     """
-    test
     read two ints
     s a string
     return a list of two ints, representing the beginning and end of a range, [i, j]
@@ -34,16 +36,10 @@ def collatz_eval (i, j) :
     """
     assert i > 0 and j > 0
     maximum = 1
-    if i <= j :
-        for n in range(i, j+1) :
-            cycle = cycle_length(n)
-            if cycle > maximum:
-                maximum = cycle
-    else :
-        for n in range(j, i+1) :
-            cycle = cycle_length(n)
-            if cycle > maximum:
-                maximum = cycle
+    for n in range(i, j+1) :
+        cycle = cycle_length(n)
+        if cycle > maximum:
+            maximum = cycle
     assert maximum > 0
     return maximum
 
@@ -54,8 +50,11 @@ def collatz_eval (i, j) :
 def cycle_length (n) :
     """
     n the number for which to find the cycle length
+    return the cycle length of n
     """
     assert n > 0
+    if cycle_lengths[n] != None :
+        return cycle_lengths[n]
     count = 1
     while n > 1 :
         if n % 2 == 1 :
@@ -66,6 +65,7 @@ def cycle_length (n) :
             n = n//2
         count += 1
     assert count > 0
+    cycle_lengths[n] = count
     return count
 
 # -------------
@@ -93,7 +93,7 @@ def collatz_solve (r, w) :
     """
     for s in r :
         i, j = collatz_read(s)
-        v    = collatz_eval(i, j)
+        v = collatz_eval(i, j) if  ( i < j )  else collatz_eval(j, i)
         collatz_print(w, i, j, v)
         
 # ----

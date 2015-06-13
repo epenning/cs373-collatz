@@ -6,6 +6,9 @@
 # Glenn P. Downing
 # ---------------------------
 
+# list cache of calculated cycle lengths for each number 1 to 1000000
+cycle_lengths = [None] * 1000000
+
 # ------------
 # collatz_read
 # ------------
@@ -45,8 +48,11 @@ def collatz_eval (i, j) :
 def cycle_length (n) :
     """
     n the number for which to find the cycle length
+    return the cycle length of n
     """
     assert n > 0
+    if cycle_lengths[n] != None :
+        return cycle_lengths[n]
     count = 1
     while n > 1 :
         if n % 2 == 1 :
@@ -57,6 +63,7 @@ def cycle_length (n) :
             n = n//2
         count += 1
     assert count > 0
+    cycle_lengths[n] = count
     return count
 
 # -------------
