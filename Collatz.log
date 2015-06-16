@@ -1,3 +1,21 @@
+commit 4e244b19c2fa35442d8826a40174f7cb9d122a11
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 16 19:59:38 2015 +0100
+
+    removed extraneous files from git
+
+commit 1428cca11996add7f85380903660bbe0b97dc1b6
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sun Jun 14 22:30:25 2015 -0500
+
+    changed EID in makefile to elp692
+
+commit 951c8f279935c7ab6f8758c8cc8bed5ed9d35ecf
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Sat Jun 13 12:34:44 2015 -0500
+
+    ran pydoc and created log of commits
+
 commit a17d9800f228100d6e2f58e5bcae33b451547def
 Author: Erin Pennington <epennington@utexas.edu>
 Date:   Sat Jun 13 12:25:00 2015 -0500

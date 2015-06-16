@@ -34,6 +34,9 @@ def collatz_eval (i, j) :
     """
     assert i > 0 and j > 0
     maximum = 1
+    # optimization, top half of range cycle lengths > bottom half
+    if i < j/2 + 1 :
+        i = j//2 + 1
     for n in range(i, j+1) :
         cycle = cycle_length(n)
         if cycle > maximum:
@@ -59,11 +62,14 @@ def cycle_length (n) :
     while m > 1 :
         if m % 2 == 1 :
             # m is odd
-            m = 3*m + 1
+            # optimization, resulting number always even
+            #so combine two steps
+            m = m + (m >> 1) + 1
+            count += 2
         else :
             # m is even
             m = m//2
-        count += 1
+            count += 1
     assert count > 0
     # save cycle length of n in cache
     cycle_lengths[n] = count
