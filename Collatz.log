@@ -1,3 +1,15 @@
+commit 9e3a1182c1ef6816b346de1d3820971afa9289ae
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 16 15:07:12 2015 -0500
+
+    fixed cache, values now actually used
+
+commit 686e4e8677bd4ba372c30478b106d5070e56de1e
+Author: Erin Pennington <epennington@utexas.edu>
+Date:   Tue Jun 16 14:16:47 2015 -0500
+
+    made html, log, and added optimizations to Collatz
+
 commit 4e244b19c2fa35442d8826a40174f7cb9d122a11
 Author: Erin Pennington <epennington@utexas.edu>
 Date:   Tue Jun 16 19:59:38 2015 +0100

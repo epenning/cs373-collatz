@@ -11,10 +11,7 @@ FILES :=                              \
     RunCollatz.in                     \
     RunCollatz.out                    \
     TestCollatz.py                    \
-    TestCollatz.out					  \
-    CreateCollatzIn.py				  \
-    CreateCollatzOut.py				  \
-    RunCollatzExpected.out			  
+    TestCollatz.out					  		  
 
 all:
 
