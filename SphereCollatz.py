@@ -9,7 +9,7 @@
 import sys
 
 # list cache of calculated cycle lengths for each number 1 to 1000000
-cycle_lengths = [None] * 1000000
+cycle_lengths = [0] * 1000000
 
 # ------------
 # collatz_read
@@ -36,6 +36,9 @@ def collatz_eval (i, j) :
     """
     assert i > 0 and j > 0
     maximum = 1
+    # optimization, top half of range cycle lengths > bottom half
+    if i < j/2 + 1 :
+        i = j//2 + 1
     for n in range(i, j+1) :
         cycle = cycle_length(n)
         if cycle > maximum:
@@ -53,19 +56,28 @@ def cycle_length (n) :
     return the cycle length of n
     """
     assert n > 0
-    if cycle_lengths[n] != None :
+    # check if cycle length of n is already known in cache
+    if cycle_lengths[n] :
         return cycle_lengths[n]
     count = 1
     m = n
     while m > 1 :
         if m % 2 == 1 :
             # m is odd
-            m = 3*m + 1
+            # optimization, resulting number always even
+            #so combine two steps
+            m = m + (m >> 1) + 1
+            count += 2
         else :
             # m is even
             m = m//2
-        count += 1
+            count += 1
+        # check if cycle length of m is already known in cache
+        if m < 1000000 and cycle_lengths[m] :
+            count = cycle_lengths[m] + count - 1
+            break
     assert count > 0
+    # save cycle length of n in cache
     cycle_lengths[n] = count
     return count
 
@@ -94,6 +106,7 @@ def collatz_solve (r, w) :
     """
     for s in r :
         i, j = collatz_read(s)
+        # pass to collatz_eval so first number < second to avoid duplicate code
         v = collatz_eval(i, j) if  ( i < j )  else collatz_eval(j, i)
         collatz_print(w, i, j, v)
         

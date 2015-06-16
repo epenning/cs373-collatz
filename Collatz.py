@@ -7,7 +7,7 @@
 # ---------------------------
 
 # list cache of calculated cycle lengths for each number 1 to 1000000
-cycle_lengths = [None] * 1000000
+cycle_lengths = [0] * 1000000
 
 # ------------
 # collatz_read
@@ -55,7 +55,7 @@ def cycle_length (n) :
     """
     assert n > 0
     # check if cycle length of n is already known in cache
-    if cycle_lengths[n] != None :
+    if cycle_lengths[n] :
         return cycle_lengths[n]
     count = 1
     m = n
@@ -70,6 +70,10 @@ def cycle_length (n) :
             # m is even
             m = m//2
             count += 1
+        # check if cycle length of m is already known in cache
+        if m < 1000000 and cycle_lengths[m] :
+            count = cycle_lengths[m] + count - 1
+            break
     assert count > 0
     # save cycle length of n in cache
     cycle_lengths[n] = count
