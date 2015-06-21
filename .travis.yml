@@ -35,6 +35,7 @@ script:
     - ls -al
     - make Collatz.html
     - ls -al
+    - make clean
     - make test
     - ls -al
     - make check
